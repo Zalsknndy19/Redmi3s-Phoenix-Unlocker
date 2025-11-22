@@ -1,3 +1,5 @@
+![ZHStore Logo](https://zhwifi.web.id/favicon.ico)
+[Visit my Website Playground](https://zhwifi.web.id/prompt)
 # Project Phoenix: Redmi 3s (Land) Unbrick & Unlock Bootloader via Android (No PC)
 
 **[Bahasa Indonesia]**
@@ -65,14 +67,15 @@ This project provides a method to Unbrick (EDL Mode) and Unlock the Bootloader o
 ## 🚀 Step 1: Setup Environment / Menyiapkan Lingkungan
 
 **[Bahasa Indonesia]**
-
-Instal terlebih dahulu aplikasi **RawBT.apk** yang telah diunduh, setelah itu instal juga modul Magisk **ADB & Fastboot for Android NDK** melalui aplikasi Magisk lalu reboot ponsel.
-Kemudian buka Termux di HP Host. Jalankan perintah ini sebagai **User Biasa** (jangan masuk `su` dulu) untuk menginstal dependensi.
+1.  Instal **RawBT.apk**.
+2.  Instal modul Magisk **ADB & Fastboot NDK** (`adb_fastboot_magisk.zip`) lewat Magisk Manager, lalu **Reboot** HP Host.
+3.  Buka Termux. Jalankan perintah di bawah ini sebagai **User Biasa** (jangan ketik `su` dulu).
 
 **[English]**
+1.  Install **RawBT.apk**.
+2.  Install **ADB & Fastboot NDK** (`adb_fastboot_magisk.zip`) module via Magisk Manager, then **Reboot** the Host phone.
+3.  Open Termux. Run these commands as **Standard User** (do not type `su` yet).
 
-First install the downloaded **RawBT.apk** application, after that also install the Magisk module **ADB & Fastboot for Android NDK** via the Magisk application then reboot the phone.
-Then open Termux on Host. Run these commands as **Standard User** (do not use `su` yet) to install dependencies.
 
 ```bash
 # 1. Update repositories / Update repositori
@@ -85,14 +88,13 @@ pkg install git python python-dev build-essential clang libxml2 libxslt libsodiu
 ---
 
 ## 📥 Step 2: Clone Repository / Clone Repositori
-
 **[Bahasa Indonesia]**
 
-Kita akan mendownload tool ini (Redmi3s-Phoenix-Unlocker) dan tool EDL ke dalam Termux.
+Kita akan mendownload script otomatis dari repo ini dan tool EDL inti.
 
 **[English]**
 
-We will download this tool (Redmi3s-Phoenix-Unlocker) and the EDL tool into Termux.
+We will download the automation scripts from this repo and the core EDL tool.
 
 ```bash
 # 1. Clone this repository / Clone repo ini
@@ -115,16 +117,14 @@ pip install wheel pyusb pyserial docopt pycryptodome lxml colorama requests pass
 
 **[Bahasa Indonesia]**
 
-Anda membutuhkan file "Magic Unlock" (376KB). Karena alasan hak cipta, silakan unduh dari link eksternal di bawah, lalu pindahkan ke folder proyek.
+Anda akan membutuhkan file "Magic Unlock" (376KB). Karena alasan hak cipta, silakan unduh dari link eksternal di bawah, lalu pindahkan ke folder proyek.
 
 **[English]**
 
-You need the "Magic Unlock" file (376KB). Due to copyright, please download from the external link below, then move it to the project folder.
+You will need the "Magic Unlock" file (376KB). Due to copyright, please download from the external link below, then move it to the project folder.
 
 1.  **Download:** [unlock_redmi3s.7z](https://drive.google.com/file/d/1vrQbntqt4Kf2VoPr9TEP36ge1piT59F4/view?usp=drive_link)
-2.  **Move & Extract:** 
-    Pindahkan file ke folder Termux.
-    Move the file to the Termux folder.
+2.  **Move & Extract / Pindahkan & Ekstrak:** 
 
 ```bash
 # Contoh jika file ada di folder Download Internal
@@ -214,7 +214,7 @@ Select one of the EDL entry methods:
     *   Unplug the battery socket.
     *   Connect the two **Test Point** points using tweezers/wire.
     ![Redmi_3s_test_point](https://raw.githubusercontent.com/Zalsknndy19/Files-for-Redmi3s-Phoenix-Unlocker/refs/heads/master/images/Redmi_3s_test_point.jpg)
-    *   While holding the tweezers, plug in the USB cable (use a normal USB cable not one that has been modified as a DFC cable.
+    *   While holding the tweezers, plug in the USB cable (use a normal USB cable not one that has been modified as a DFC cable).
 
 ---
 
@@ -268,7 +268,7 @@ If the script displays "DONE", your phone now has a patched Bootloader.
 2.  Plug in the battery socket (if it was removed).
 3.  Enter **Fastboot Mode** manually (Hold **Volume Down + Power**).
 4.  Reconnect to the Host Device.
-5.  Run the unlock command in Termux (Root):
+5.  Run unlock command in Termux (Root):
 
 ```bash
 fastboot devices
